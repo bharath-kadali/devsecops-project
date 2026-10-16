@@ -145,7 +145,8 @@ jobs:
             --set frontend.image=${{ env.FRONTEND_IMG_REPO }} \
             --set frontend.tag=${{ github.sha }} \
             --set ingress.enabled=false \
-            --set postgres.persistence.enabled=false
+            --set postgres.persistence.enabled=false \
+            --set monitoring.serviceMonitor.enabled=false
 
       - name: Verify Cluster Resources
         run: |
