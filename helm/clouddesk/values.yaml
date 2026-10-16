@@ -1,0 +1,41 @@
+frontend:
+  image: ghcr.io/bharath-kadali/clouddesk-frontend
+  tag: latest
+  port: 8080
+
+backend:
+  image: ghcr.io/bharath-kadali/clouddesk-backend
+  tag: latest
+  port: 8000
+
+replicaCount: 2
+namespace: clouddesk
+imagePullSecrets: []
+
+postgres:
+  host: clouddesk-postgres
+  database: clouddesk
+  username: clouddesk
+  password: clouddesk
+
+ingress:
+  enabled: true
+  host: clouddesk.local
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 60
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+monitoring:
+  serviceMonitor:
+    enabled: true

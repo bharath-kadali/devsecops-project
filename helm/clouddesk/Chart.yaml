@@ -1,0 +1,5 @@
+apiVersion: v2
+name: clouddesk
+description: CloudDesk IT Helpdesk & Ops Capstone Helm Chart
+version: 1.0.0
+appVersion: "1.0.0"
