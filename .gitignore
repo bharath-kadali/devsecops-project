@@ -9,7 +9,15 @@ target/
 *.tfstate
 *.tfstate.*
 
+# OS
+.DS_Store
+*/.DS_Store
+Thumbs.db
+
 # Python
+.venv/
+venv/
+env/
 __pycache__/
 *.py[cod]
 *.pyo
