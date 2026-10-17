@@ -8,7 +8,7 @@ backend:
   tag: latest
   port: 8000
 
-replicaCount: 1
+replicaCount: 2
 namespace: clouddesk
 imagePullSecrets: []
 
