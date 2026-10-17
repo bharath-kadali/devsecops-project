@@ -466,6 +466,10 @@ AWS Management Console showing `clouddesk-vpc` with public/private subnets acros
 AWS Management Console showing `clouddesk-eks` in `Active` status:
 ![M7 - AWS EKS Console](screenshots/M7/Screenshot%202026-10-17%20133123.png)
 
+#### 7.4 Terraform Destroy Output
+PowerShell terminal output showing clean `terraform destroy` matching AWS infrastructure:
+![M7 - Terraform Destroy Output](screenshots/M7/Screenshot%202026-10-17%20153331.png)
+
 ---
 
 ### Module 8: Kubernetes Orchestration & Helm Deployment (M8)
