@@ -64,8 +64,13 @@ spec:
             mountPath: /var/lib/postgresql/data
       volumes:
         - name: data
+        {{- if and .Values.postgres.persistence .Values.postgres.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "clouddesk.fullname" . }}-postgres-data
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+{{- if and .Values.postgres.persistence .Values.postgres.persistence.enabled }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -76,3 +81,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
+{{- end }}

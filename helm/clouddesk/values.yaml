@@ -8,7 +8,7 @@ backend:
   tag: latest
   port: 8000
 
-replicaCount: 2
+replicaCount: 1
 namespace: clouddesk
 imagePullSecrets: []
 
@@ -17,24 +17,23 @@ postgres:
   database: clouddesk
   username: clouddesk
   password: clouddesk
+  persistence:
+    enabled: false
 
 ingress:
   enabled: true
   host: clouddesk.local
 
 hpa:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 6
-  targetCPUUtilizationPercentage: 60
+  enabled: false
 
 resources:
   requests:
-    cpu: 100m
-    memory: 256Mi
+    cpu: 50m
+    memory: 128Mi
   limits:
-    cpu: 500m
-    memory: 512Mi
+    cpu: 250m
+    memory: 256Mi
 
 monitoring:
   serviceMonitor:

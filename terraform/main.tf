@@ -32,11 +32,11 @@ module "eks" {
   enable_cluster_creator_admin_permissions = true
 
   eks_managed_node_groups = {
-    main = {
-      instance_types = ["t3.medium"]
-      min_size       = 2
-      max_size       = 4
-      desired_size   = 2
+    small = {
+      instance_types = ["t3.small"]
+      min_size       = 1
+      max_size       = 3
+      desired_size   = 3
     }
   }
 
